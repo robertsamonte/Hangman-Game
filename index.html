@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hangman Game</title>
+	
+	<!-- Bootstrap CDN -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- JQuery -->
+  	<script src="https://code.jquery.com/jquery.js"></script>
+	
+</head>
+
+<body>
+	<div class="container">
+		<div class="jumbotron">
+			<h1 class="text-center"><strong>So...you think you're smart?</strong></h1>
+			<h2 class="text-center">***Are you Ivy League-Worthy?***</h1>
+			<br>
+			<br>
+			<h3 class="text-center">Using the keyboard, type a letter until you guess the name of the Ivy League school I'm thinking.</h3>
+			<h4 class="text-center">(If you type 9 wrong answers, you lose...)</h4>
+			<br>
+			<h2 class="text-center">Now, Let's Start The Game!!!</h2>
+			<hr>
+			<div class="text-center">
+	        	<button class="btn btn-warning btn-xs theme-button"><span class="glyphicon glyphicon-music"></span> Play Theme!</button>
+	        	<button class="btn btn-default btn-xs pause-button"><span class="glyphicon glyphicon-pause"></span> Pause Music</button>
+	     	</div>
+
+		</div>
+
+	</div>
+
+   <div class="row">
+
+      <!-- Left Panel -->
+      <div class="col-lg-6">
+
+        <!-- Five Panels-->
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Word to Guess</h3>
+			</div>
+			<div class="panel-body">
+			<h2 id="wordToGuess">_ _ _ _ _ _ _</h2>
+		</div>
+	</div>
+		
+	<div class="panel panel-default">
+	 	<div class="panel-body">
+	 		Wrong Guesses: <span id="wrongGuesses"></span>
+		</div>
+	</div>
+	
+	<div class="panel panel-default">
+		<div class="panel-body">
+			Guesses Left: <span id="numGuesses"></span>
+		</div>
+	</div>
+	
+	<div class="panel panel-default">
+		<div class="panel-body">
+			Win Counter: <span id="winCounter">0</span>
+		</div>
+	</div>
+	
+	<div class="panel panel-default">
+		<div class="panel-body">
+			Loss Counter:  <span id="lossCounter">0</span>
+		</div>
+	</div>
+	
+</div>
+  
+      <!-- Right Panel (Ivy League)-->
+      <div class="col-lg-6">
+
+        <!-- Ivy League Image -->
+        <img src="C:\Users\Robert Samonte\Hangman-Game\assets\images\Ivy League Logo.jpg" alt="" class="ivy league" style="position:absolute; top:5px; left: 10px; z-index: -20; height: 300px">
+      </div>
+    </div>
+  </div>
+	
+
+<script>
+
+    // JavaScript function that wraps everything
+    $(document).ready(function() {
+
+      // Gets Link for Theme Song
+      var audioElement = document.createElement("audio");
+      audioElement.setAttribute("src", "assets/images/AlmaMaterHymn.m4a");
+
+      // Theme Button
+      $(".theme-button").on("click", function() {
+        audioElement.play();
+      });
+
+      $(".pause-button").on("click", function() {
+        audioElement.pause();
+      });
+
+  
+     
+    });
+
+  </script>
+
+	<!-- Link to Javascript -->
+	<script src="assets/javascript/game.js"></script>
+</body>
+</html>
+
+
