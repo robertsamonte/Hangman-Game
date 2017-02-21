@@ -11,7 +11,7 @@ var wrongLetters = [];
 //Game counters
 var winCount = 0;
 var lossCount = 0;
-var guessesLeft = 9;
+var guessesLeft = 12;
 
 //2 FUNCTIONS (Reusable blocks of code that I will call upon when needed)
 // -------------------------------------------
@@ -22,7 +22,7 @@ function startGame () {
 	numBlanks = lettersinWord.length;
 
 	//Reset
-	guessesLeft = 9;
+	guessesLeft = 12;
 	wrongLetters = [];
 	blanksAndSuccesses = [];
 
@@ -51,7 +51,7 @@ function checkLetters(letter) {
 	for (var i=0; i<numBlanks; i++){
 		if(selectedWord[i] == letter) {
 			isLetterInWord = true;
-			//alert("Letter found");
+			//alert("Good Guess!!! Now click OK button");
 		}
 	}
 
@@ -69,6 +69,7 @@ function checkLetters(letter) {
 	else {
 		wrongLetters.push(letter);
 		guessesLeft--
+		// alert("Wrong!!! Now click OK button");
 	}
 
 	//Testing and Debugging
@@ -88,6 +89,7 @@ function roundComplete(){
 	if (lettersinWord.toString() == blanksAndSuccesses.toString()) {
 		winCount++
 		alert("Wow! You are smart!!!");
+		alert("Click OK to play again");
 
 		// Update the win counter in the HTML
 		document.getElementById("winCounter").innerHTML = winCount;
@@ -99,6 +101,7 @@ function roundComplete(){
 	else if (guessesLeft == 0) {
 		lossCount++;
 		alert("You Lost!");
+		alert("Click OK to play again");
 
 		//Update the HTML
 		document.getElementById("lossCounter").innerHTML = lossCount;
